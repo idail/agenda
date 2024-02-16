@@ -3,8 +3,8 @@
 @section('content')
     <div class="row mb-3">
         <div class="col-lg-2">
-            <a href="{{ route('contato.cadastro') }}" class="btn btn-primary">Cadastrar Contato</a>
-            <a href="" class="btn btn-primary">Autenticar</a>
+            <a href="{{ route('contato.cadastro') }}" class="btn btn-primary mb-4">Cadastrar Contato</a>
+            <a href="{{ route('usuarios.login')}}" class="btn btn-primary">Autenticar</a>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
                             <td>{{ $dados->nome }}</td>
                             <td>{{ $dados->contato }}</td>
                             <td>{{ $dados->email }}</td>
-                            {{-- @if (session()->has('nome_usuario')){ --}}
+                            @if (session()->has('nome_usuario')){
                             <td>
                                 <a href="{{ route('contato.detalhes', $dados->id) }}"><i class="bi bi-binoculars fs-3"
                                         title="Visualizar Contato" style="margin-inline-end: 10%;"></i></i></a>
@@ -40,7 +40,7 @@
                                 <a href="{{ route('contato.deletar', $dados->id) }}"><i class="bi bi-trash fs-3"
                                         title="Excluir Contato"></i></a>
                             </td>
-                            {{-- }@endif --}}
+                            }@endif
                         </tr>
                     @endforeach
                 </tbody>

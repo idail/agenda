@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcessoController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\InicioController;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +29,6 @@ Route::get("contato/edita_contato/{item}",[ContatoController::class,"exibir_edic
 Route::put("contato/edita/{item}",[ContatoController::class,"edita"])->name("contato.edita");
 Route::get("contato/excluir/{item}",[ContatoController::class,"exibir_modal_delecao"])->name("contato.deletar");
 Route::delete("contato/exclusao/{item}",[ContatoController::class,"exclusao_contato"])->name("contato.exclusao");
+
+Route::get('/acesso', [AcessoController::class, 'login'])->name('usuarios.login');
+Route::post("contatos",[AcessoController::class,"autenticar"])->name("usuario.autenticar");
