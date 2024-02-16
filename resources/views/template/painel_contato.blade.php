@@ -45,9 +45,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="" class="logo d-flex align-items-center">
+      <a href="{{route('home')}}" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block"><h6>Gerenciador de Pessoas</h6></span>
+        <span class="d-none d-lg-block"><h6>Gerenciador de Contatos</h6></span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -217,7 +217,7 @@
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
+            {{-- <li class="dropdown-header">
               <span>Web Designer</span>
             </li>
             <li>
@@ -252,7 +252,7 @@
             </li>
             <li>
               <hr class="dropdown-divider">
-            </li>
+            </li> --}}
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="">
@@ -275,24 +275,24 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="">
+        <a class="nav-link " href="{{route('home')}}">
           <i class="bi bi-grid"></i>
-          <span>GDP</span>
+          <span>GDC</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Pessoas</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Contatos</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="">
-              <i class="bi bi-circle"></i><span>Consultar Pessoas</span>
+            <a href="{{route('buscar.contatos')}}">
+              <i class="bi bi-circle"></i><span>Consultar Contatos</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{route('contato.cadastro')}}">
               <i class="bi bi-circle"></i><span>Cadastrar Pessoas</span>
             </a>
           </li>

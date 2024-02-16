@@ -8,9 +8,9 @@ class InicioController extends Controller
 {
     public function __invoke(){
         if(session()->has("nome_usuario")){
-            return view("contatos.index");
+            return redirect()->route("buscar.contatos");
         }else{
-            return view('contatos.index');
+            return redirect()->route("buscar.contatos");
         }
     }
 }
